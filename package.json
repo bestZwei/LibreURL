@@ -1,8 +1,12 @@
 {
   "name": "libreurl",
   "version": "1.0.0",
+  "description": "A simple URL shortener using Cloudflare Pages",
+  "main": "index.js",
   "scripts": {
-    "build": "echo 'Build step not required'",
-    "deploy": "npx wrangler pages deploy public --project-name libreurl"
-  }
+    "build": "echo 'No build step required'",
+    "start": "echo 'No start step required'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

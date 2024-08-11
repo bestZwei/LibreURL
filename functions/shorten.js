@@ -1,33 +1,17 @@
-const crypto = require('crypto');
+const urlDatabase = {}; // 用于存储短网址和长网址的映射
 
-// 生成短码
-function generateShortCode() {
-  return crypto.randomBytes(3).toString('hex');
-}
+export async function onRequestPost({ request }) {
+    const { longUrl, selectedDomain } = await request.json();
+    
+    // 生成短网址
+    const shortKey = Math.random().toString(36).substring(2, 8);
+    const shortUrl = `${selectedDomain}/${shortKey}`;
+    
+    // 存储映射
+    urlDatabase[shortKey] = longUrl;
 
-// 短网址生成处理函数
-async function handleRequest(request) {
-  const url = new URL(request.url);
-  const longURL = url.searchParams.get('url');
-  const domain = url.searchParams.get('domain');
-
-  if (!longURL || !domain) {
-    return new Response(JSON.stringify({ error: 'Missing required parameters' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
+    // 返回短网址
+    return new Response(JSON.stringify({ shortUrl }), {
+        headers: { 'Content-Type': 'application/json' },
     });
-  }
-
-  const shortCode = generateShortCode();
-  const shortURL = `https://${domain}/${shortCode}`;
-
-  // 在这里可以将短网址和长网址的映射关系存储到数据库中
-
-  return new Response(JSON.stringify({ shortURL }), {
-    headers: { 'Content-Type': 'application/json' },
-  });
 }
-
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request));
-});

@@ -1,0 +1,12 @@
+name = "url-shortener"
+type = "javascript"
+
+[build]
+command = "npm install"
+[build.upload]
+format = "modules"
+directory = "public"
+
+[[routes]]
+pattern = "/*"
+handler = "functions/shorten"

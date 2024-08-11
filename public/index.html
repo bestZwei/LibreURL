@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Short URL Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Short URL Generator</h1>
-  <label for="long-url">Long URL:</label>
-  <input type="text" id="long-url" name="long-url" required>
-  <br>
-  <label for="domain">Domain:</label>
-  <select id="domain" name="domain"></select>
-  <br>
-  <button onclick="shortenURL()">Shorten</button>
-  <p id="short-url"></p>
-
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <select id="domain-select"></select>
+        <input type="text" id="url-input" placeholder="Enter URL" />
+        <button id="shorten-btn">Shorten</button>
+        <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
