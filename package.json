@@ -1,0 +1,10 @@
+{
+    "name": "short-url-project",
+    "version": "1.0.0",
+    "description": "A simple short URL generator",
+    "scripts": {
+      "build": "echo 'No build needed'"
+    },
+    "author": "",
+    "license": "ISC"
+  }
