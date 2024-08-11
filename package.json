@@ -1,10 +1,8 @@
 {
-    "name": "short-url-project",
-    "version": "1.0.0",
-    "description": "A simple short URL generator",
-    "scripts": {
-      "build": "echo 'No build needed'"
-    },
-    "author": "",
-    "license": "ISC"
+  "name": "short-url-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Build step not required'",
+    "deploy": "npx wrangler pages publish public --project-name short-url-project"
   }
+}
