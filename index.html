@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短网址生成器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>短网址生成器</h1>
+        <input type="text" id="longUrl" placeholder="输入长网址">
+        <input type="text" id="customSuffix" placeholder="自定义后缀（可选）">
+        <select id="domainSelect"></select>
+        <button onclick="generateShortUrl()">生成短网址</button>
+        <p id="shortUrl"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
