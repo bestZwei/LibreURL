@@ -1,8 +1,8 @@
 {
-  "name": "short-url-project",
+  "name": "libreurl",
   "version": "1.0.0",
   "scripts": {
     "build": "echo 'Build step not required'",
-    "deploy": "npx wrangler pages publish public --project-name short-url-project"
+    "deploy": "npx wrangler pages deploy public --project-name libreurl"
   }
 }
